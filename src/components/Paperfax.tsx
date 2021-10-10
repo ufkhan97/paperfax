@@ -3,6 +3,7 @@ import { useWeb3ExecuteFunction } from 'react-moralis'
 
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from 'rinkeby'
 
+import AuditList from 'components/AuditList'
 import AddAuditButton from 'components/AddAuditButton'
 import NewPaperfaxButton from 'components/NewPaperfaxButton'
 
@@ -20,6 +21,8 @@ const Paperfax: React.FC<PaperfaxProps> = ({ paper }) => {
     }
   })
 
+  console.log(data)
+
   return (
     <div className='paperfax sidebar'>
       {isLoading && <h1>Loading...</h1>}
@@ -36,8 +39,8 @@ const Paperfax: React.FC<PaperfaxProps> = ({ paper }) => {
         (Number(data.paperfaxId) ? (
           <>
             <h1>Paperfax found.</h1>
-            <pre>{JSON.stringify(data, null, 2)}</pre>
             <AddAuditButton paperfaxId={Number(data.paperfaxId)} />
+            <AuditList paperfax={data} />
           </>
         ) : (
           <>

@@ -1,4 +1,4 @@
-export const CONTRACT_ADDRESS = '0x5A5177BC51b7907588Eb377852C739187bFF2b46'
+export const CONTRACT_ADDRESS = '0x5434550785Ac720C57835F1523F622Bc3fc9e3fE'
 export const CONTRACT_ABI = [
   {
     "inputs": [
@@ -91,6 +91,11 @@ export const CONTRACT_ABI = [
         "internalType": "uint256",
         "name": "paperfaxId",
         "type": "uint256"
+      },
+      {
+        "internalType": "address[]",
+        "name": "auditors",
+        "type": "address[]"
       },
       {
         "internalType": "enum PaperfaxIndex.Verdict[]",

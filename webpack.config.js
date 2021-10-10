@@ -38,7 +38,7 @@ module.exports = (env, argv) => {
       ]
     },
     resolve: {
-      extensions: ['.tsx', '.ts', '.js', '.css'],
+      extensions: ['.tsx', '.ts', '.js', '.mjs', '.css'],
       fallback: {
         crypto: false,
         stream: false,
@@ -47,6 +47,9 @@ module.exports = (env, argv) => {
         https: false,
         os: false
       },
+      // alias: {
+      //   process: "process/browser"
+      // },
       plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })]
     },
     output: {
@@ -57,8 +60,10 @@ module.exports = (env, argv) => {
     plugins: [
       !isProduction && new ReactRefreshWebpackPlugin(),
       new HtmlWebpackPlugin({ template: 'src/index.html' }),
-      new webpack.ProvidePlugin({ process: 'process/browser' }),
-      new webpack.ProvidePlugin({ Buffer: ['buffer', 'Buffer'] })
+      new webpack.ProvidePlugin({
+            Buffer: ['buffer', 'Buffer'],
+            process: 'process/browser.js',
+      }),
     ].filter(Boolean),
     devServer: {
       static: {

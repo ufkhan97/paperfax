@@ -148,3 +148,29 @@ input {
   right: 1rem;
   top: 0.5rem;
 }
+
+.audit {
+  margin: 1rem 0;
+  padding: 0;
+  border: 1px solid #333;
+}
+
+.audit-header {
+  padding: 1rem;
+}
+
+.audit-content {
+  padding: 1rem;
+}
+
+.verdict-0 {
+  background: #90ee90;
+}
+
+.verdict-1 {
+  background: #ffffe0;
+}
+
+.verdict-2 {
+  background: #ffcccb;
+}
