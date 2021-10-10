@@ -2,20 +2,19 @@ import React from "react";
 import { useMoralis } from "react-moralis";
 
 const Nav = () => {
-  const { authenticate, isAuthenticated, user } = useMoralis();
+  const { authenticate, isAuthenticating, isAuthenticated, user, logout } = useMoralis();
 
-  if (!isAuthenticated) {
-    return (
-      <div>
-        <button onClick={() => authenticate()}>Authenticate</button>
-      </div>
-    );
-  }
+  const controls = isAuthenticated
+    ? <button className="login-button" onClick={() => logout()}>Logout {user?.get("username")}</button>
+    : <button disabled={isAuthenticating} className="login-button" onClick={() => authenticate()}>
+        { isAuthenticating ? <div className="spinner" /> : "Login / Register" }
+      </button>
 
   return (
-    <div>
-      <h1>Welcome {user?.get("username")}</h1>
-    </div>
+    <nav className="sidebar with-sidebar">
+      <div className="sidebar">{controls}</div>
+      <h1 className="not-sidebar">Paperfax</h1>
+    </nav>
   );
 }
 
