@@ -24,7 +24,7 @@ const App = () => {
         <Nav goToRoute={goToRoute} />
         {paper?.replace('/', '') ?
           <div className="not-sidebar with-sidebar">
-            <Paperfax />
+            <Paperfax paper={paper} />
             <Paper paper={paper} />
           </div> :
           <PaperSearch goToRoute={goToRoute} />

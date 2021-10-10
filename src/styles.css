@@ -69,6 +69,7 @@ button, input {
     flex-basis: 20rem;
     flex-grow: 200;
     max-width: 40rem;
+    padding: 1rem;
 }
 
 .not-sidebar {
