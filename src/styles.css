@@ -105,3 +105,36 @@ input {
 .search-wrapper button {
   font-size: 1.5rem;
 }
+
+.modal-container {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  padding: 1rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: 0.2s ease-out;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 0.25rem;
+  max-height: 80vh;
+  max-width: 40rem;
+  overflow: auto;
+  padding: 3rem;
+  position: relative;
+  transition: 0.2s ease-out;
+}
+
+.modal-container.open {
+  opacity: 1;
+  visibility: visible;
+}
