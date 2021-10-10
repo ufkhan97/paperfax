@@ -1,4 +1,4 @@
-export const CONTRACT_ADDRESS = '0x93181535C064fBf25591D79Ab05F88De7e96C7fD'
+export const CONTRACT_ADDRESS = '0x1f9c88C45f11A500332584A3fD42bD20596D71fD'
 export const CONTRACT_ABI = [
   {
     "inputs": [
@@ -72,6 +72,60 @@ export const CONTRACT_ABI = [
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_paperURI",
+        "type": "string"
+      }
+    ],
+    "name": "paperfaxDetails",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "paperfaxId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "enum PaperfaxIndex.Verdict[]",
+        "name": "verdicts",
+        "type": "uint8[]"
+      },
+      {
+        "internalType": "string[]",
+        "name": "ipfsHashes",
+        "type": "string[]"
+      },
+      {
+        "internalType": "uint32[]",
+        "name": "numMinorIssues",
+        "type": "uint32[]"
+      },
+      {
+        "internalType": "uint32[]",
+        "name": "numMajorIssues",
+        "type": "uint32[]"
+      },
+      {
+        "internalType": "uint32[]",
+        "name": "numRecommendations",
+        "type": "uint32[]"
+      },
+      {
+        "internalType": "uint32[]",
+        "name": "upvotes",
+        "type": "uint32[]"
+      },
+      {
+        "internalType": "uint32[]",
+        "name": "downvotes",
+        "type": "uint32[]"
       }
     ],
     "stateMutability": "view",
