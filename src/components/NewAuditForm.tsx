@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useWeb3ExecuteFunction } from 'react-moralis'
-
+import { Web3Storage } from 'web3.storage'
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from 'rinkeby'
 
 interface NewAuditFormProps {
@@ -82,5 +82,31 @@ const NewAuditForm: React.FC<NewAuditFormProps> = ({ paperfaxId }) => {
     </>
   )
 }
+function getAccessToken() {
+  // If you're just testing, you can paste in a token
+  // and uncomment the following line:
+   return 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDlmQTI3YWVlY0M2MDYyMzI2Y2ZCOEI0ODQ0ODhlZGUyZDEwNmMwQjUiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2MzM4OTUxODk3ODQsIm5hbWUiOiJQYXBlcmZheCJ9.NWUYZJYzWSEUhQmDdQ4rUMtPgDoVoO83ypH73U_CASc'
 
+  // In a real app, it's better to read an access token from an 
+  // environement variable or other configuration that's kept outside of 
+  // your code base. For this to work, you need to set the
+  // WEB3STORAGE_TOKEN environment variable before you run your code.
+ // return process.env.WEB3STORAGE_TOKEN
+}
+
+function makeStorageClient() {
+  return new Web3Storage({ token: getAccessToken() })
+}
+
+function getFiles() {
+  const fileInput = document.querySelector('input[type="file"]')
+  return fileInput.files
+}
+
+async function storeFiles(files) {
+  const client = makeStorageClient()
+  const cid = await client.put(files)
+  console.log('stored files with cid:', cid)
+  return cid
+}
 export default NewAuditForm
