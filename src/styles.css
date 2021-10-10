@@ -1,97 +1,99 @@
-#root, .app-container {
-    height: 100%;
-    width: 100%;
+#root,
+.app-container {
+  height: 100%;
+  width: 100%;
 }
 
 .app-container {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 nav {
-    background: #333;
-    color: #fff;
-    flex-direction: row-reverse;
-    align-items: center;
-    padding: 0 1rem;
+  background: #333;
+  color: #fff;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 0 1rem;
 }
 
 nav a {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
-button, input {
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+button,
+input {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .login-button {
-    background: #333;
-    border: 2px solid #fff;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 400;
-    padding: 0.5rem 2rem;
-    transition: all 0.2s ease-in-out;
-    min-width: 11rem;
-    min-height: 2rem;
+  background: #333;
+  border: 2px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.5rem 2rem;
+  transition: all 0.2s ease-in-out;
+  min-width: 11rem;
+  min-height: 2rem;
 }
 
 .login-button:hover:enabled {
-    background: #fff;
-    color: #333;
+  background: #fff;
+  color: #333;
 }
 
 .login-button:disabled {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 .spinner {
-    margin: auto;
-    border:2px solid #444;
-    border-top:2px solid #fff;
-    border-radius:50%;
-    width:1rem;
-    height:1rem;
-    animation:spin 2s linear infinite
+  margin: auto;
+  border: 2px solid #444;
+  border-top: 2px solid #fff;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  animation: spin 2s linear infinite;
 }
 
 .with-sidebar {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .sidebar {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .paperfax {
-    flex-basis: 20rem;
-    flex-grow: 200;
-    max-width: 40rem;
-    padding: 1rem;
+  flex-basis: 20rem;
+  flex-grow: 200;
+  max-width: 40rem;
+  padding: 1rem;
 }
 
 .not-sidebar {
-    flex-basis: 0;
-    flex-grow: 999;
+  flex-basis: 0;
+  flex-grow: 999;
 }
 
 .paper-search {
-    padding-top: 1rem;
+  padding-top: 1rem;
 }
 
 .search-wrapper {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .search-wrapper input {
-    font-size: 1.5rem;
-    width: 80%;
-    max-width: 40rem;
+  font-size: 1.5rem;
+  width: 80%;
+  max-width: 40rem;
 }
 
 .search-wrapper button {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
