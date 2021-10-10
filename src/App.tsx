@@ -7,7 +7,8 @@ import Paperfax from "components/Paperfax"
 import PaperSearch from "components/PaperSearch"
 
 const App = () => {
-  const [paper, setPaper] = useState(window.location.pathname)
+  const path = window.location.pathname
+  const [paper, setPaper] = useState(path[0] === '/' ? path.substr(1) : path)
   // const [paperfaxCache, setPaperfaxCache] = useState({})
 
   const goToRoute = useCallback((route: string) => {
