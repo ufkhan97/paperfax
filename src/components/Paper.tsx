@@ -1,7 +1,11 @@
 import React from "react";
 
-const Paper = () => (
-  <iframe className="not-sidebar" src="https://bitcoin.org/bitcoin.pdf" />
+interface PaperProps {
+  paper: string
+}
+
+const Paper: React.FC<PaperProps> = ({ paper }) => (
+  <iframe className="not-sidebar" src={paper} />
 )
 
 export default Paper

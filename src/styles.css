@@ -15,8 +15,16 @@ nav {
     padding: 0 1rem;
 }
 
-.login-button {
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+button, input {
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.login-button {
     background: #333;
     border: 2px solid #fff;
     color: #fff;
@@ -66,4 +74,23 @@ nav {
 .not-sidebar {
     flex-basis: 0;
     flex-grow: 999;
+}
+
+.paper-search {
+    padding-top: 1rem;
+}
+
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.search-wrapper input {
+    font-size: 1.5rem;
+    width: 80%;
+    max-width: 40rem;
+}
+
+.search-wrapper button {
+    font-size: 1.5rem;
 }
