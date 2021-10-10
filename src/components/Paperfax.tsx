@@ -3,6 +3,7 @@ import { useWeb3ExecuteFunction } from 'react-moralis'
 
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from 'rinkeby'
 
+import AddAuditButton from 'components/AddAuditButton'
 import NewPaperfaxButton from 'components/NewPaperfaxButton'
 
 interface PaperfaxProps {
@@ -36,6 +37,7 @@ const Paperfax: React.FC<PaperfaxProps> = ({ paper }) => {
           <>
             <h1>Paperfax found.</h1>
             <pre>{JSON.stringify(data, null, 2)}</pre>
+            <AddAuditButton paperfaxId={Number(data.paperfaxId)} />
           </>
         ) : (
           <>

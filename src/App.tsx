@@ -7,13 +7,13 @@ import Paperfax from 'components/Paperfax'
 import PaperSearch from 'components/PaperSearch'
 
 const App = () => {
-  const path = window.location.pathname
+  const path = decodeURIComponent(window.location.pathname.trim())
   const [paper, setPaper] = useState(path[0] === '/' ? path.substr(1) : path)
   // const [paperfaxCache, setPaperfaxCache] = useState({})
 
   const goToRoute = useCallback(
     (route: string) => {
-      window.history.pushState({}, '', encodeURIComponent(route))
+      window.history.pushState({}, '', `/${encodeURIComponent(route)}`)
       setPaper(route)
     },
     [setPaper]
@@ -24,10 +24,10 @@ const App = () => {
       appId='eYRfSIZaKuE2yL6aqlhyJQLp29oIgSMtHyIHSPbU'
       serverUrl='https://vhejc7duqagr.moralishost.com:2053/server'
     >
-      <div className='app-container with-sidebar'>
+      <div className='with-sidebar app-container'>
         <Nav goToRoute={goToRoute} />
         {paper?.replace('/', '') ? (
-          <div className='not-sidebar with-sidebar'>
+          <div className='not-sidebar with-sidebar content'>
             <Paperfax paper={paper} />
             <Paper paper={paper} />
           </div>

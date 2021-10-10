@@ -10,7 +10,7 @@ const Nav: React.FC<NavProps> = ({ goToRoute }) => {
 
   const goHome = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
-    goToRoute('/')
+    goToRoute('')
   }
 
   const controls = isAuthenticated ? (
