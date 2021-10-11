@@ -174,3 +174,14 @@ input {
 .verdict-2 {
   background: #ffcccb;
 }
+
+.nav-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-subtitle {
+    font-weight: 400;
+    font-style: oblique;
+}

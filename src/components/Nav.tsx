@@ -1,6 +1,8 @@
 import React from 'react'
 import { useMoralis } from 'react-moralis'
 
+import { GITHUB, ETHERSCAN } from "icons"
+
 interface NavProps {
   goToRoute: (route: string) => void
 }
@@ -26,11 +28,18 @@ const Nav: React.FC<NavProps> = ({ goToRoute }) => {
   return (
     <nav className='sidebar with-sidebar'>
       <div className='sidebar'>{controls}</div>
-      <h1 className='not-sidebar'>
-        <a href='/' onClick={goHome}>
+      <div className='not-sidebar nav-title'>
+        <h1><a href='/' onClick={goHome}>
           Paperfax
+        </a></h1>
+        <h2 className='nav-subtitle'>MMO peer review.</h2>
+        <a href="https://github.com/jooddang/paperfax" target="_blank">
+          <img src={GITHUB} />
         </a>
-      </h1>
+        <a href="https://rinkeby.etherscan.io/address/0x5434550785ac720c57835f1523f622bc3fc9e3fe#code" target="_blank">
+          <img src={ETHERSCAN} />
+        </a>
+      </div>
     </nav>
   )
 }

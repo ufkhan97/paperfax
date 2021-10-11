@@ -1,4 +1,5 @@
 # paperfax
 
-Run locally: `yarn dev`  
-Deploy: automatic from https://github.com/llllvvuu/paperfax/tree/main
+Run locally: `yarn dev`
+Deploy: `yarn deploy` with `origin` set to `git@github.com:llllvvuu/paperfax`
+Contracts: `https://github.com/llllvvuu/paperfax-contracts`
