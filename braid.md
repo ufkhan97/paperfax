@@ -54,3 +54,4 @@ WeChat:
 
 ## How to Contribute
 Join our discord! 
+Check out the github discussion: https://github.com/filecoin-project/community/discussions/377 
